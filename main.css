@@ -1,0 +1,295 @@
+/* ===== CSS VARIABLES ===== */
+:root {
+    --main-color: hsl(249, 10%, 26%);
+    --second-color: hsl(154, 59%, 51%);
+    --my-font: 'Poppins', sans-serif;
+    
+    /* Color palette */
+    --error-color: #e74c3c;
+    --error-bg: #fdf2f2;
+    --error-border: #fecaca;
+    --error-icon: #dc2626;
+    
+    /* Spacing */
+    --spacing-xs: 5px;
+    --spacing-sm: 8px;
+    --spacing-md: 10px;
+    --spacing-lg: 15px;
+    --spacing-xl: 20px;
+    --spacing-xxl: 50px;
+    
+    /* Border radius */
+    --radius-sm: 5px;
+    --radius-md: 6px;
+    
+    /* Shadows */
+    --shadow-sm: 0 4px 7px var(--main-color);
+    --shadow-md: 0 4px 8px var(--main-color);
+}
+
+/* ===== RESET & BASE STYLES ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: var(--my-font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: hsl(0, 100%, 74%);
+    background-image: url(/images/bg-intro-desktop.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+/* ===== LAYOUT COMPONENTS ===== */
+.content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-xxl);
+    gap: var(--spacing-xxl);
+}
+
+/* ===== HEADING SECTION ===== */
+.heading {
+    max-width: 400px;
+    text-align: left;
+}
+
+.main-h {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-xl);
+}
+
+.paragraph {
+    color: white;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* ===== RIGHT SECTION ===== */
+.right-part {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    width: 100%;
+    max-width: 450px;
+}
+
+.text-show {
+    background-color: hsl(248, 32%, 49%);
+    height: 45px;
+    border-radius: var(--radius-sm);
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+}
+
+.text-show span {
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+/* ===== FORM STYLES ===== */
+form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-xl);
+}
+
+form input {
+    margin-bottom: var(--spacing-lg);
+    height: 45px;
+    padding: var(--spacing-md);
+    border: 1px solid var(--main-color);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+}
+
+/* ===== BUTTON STYLES ===== */
+button {
+    background-color: var(--second-color);
+    border: none;
+    border-radius: var(--radius-sm);
+    height: 45px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: hsl(154, 59%, 30%);
+}
+
+/* ===== TYPOGRAPHY ===== */
+.last-p {
+    color: var(--main-color);
+    font-size: 12px;
+}
+
+.last-p a {
+    color: hsl(0, 100%, 74%);
+    text-decoration: none;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    margin-top: var(--spacing-xl);
+    color: white;
+    font-size: 12px;
+}
+
+/* ===== ERROR MESSAGE STYLES ===== */
+.error {
+    color: var(--error-color);
+    font-size: 12px;
+    margin-top: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) 12px;
+    background-color: var(--error-bg);
+    border: 1px solid var(--error-border);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.error span {
+    color: var(--error-icon);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.img-error {
+    width: 16px;
+    height: 16px;
+    margin-right: var(--spacing-xs);
+}
+
+/* ===== SUCCESS MESSAGE STYLES ===== */
+.success-validation {
+    color: #059669;
+    font-size: 12px;
+    margin-top: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) 12px;
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.success-validation span {
+    color: #16a34a;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(-5px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets (up to 1024px) */
+@media (max-width: 1024px) {
+    .content {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .heading {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .main-h {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .paragraph {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .right-part {
+        width: 90%;
+    }
+}
+
+/* Mobile (up to 768px) */
+@media (max-width: 768px) {
+    body {
+        background-image: url(/images/bg-intro-mobile.png);
+        background-size: cover;
+    }
+
+    .main-h {
+        font-size: 28px;
+    }
+
+    .paragraph {
+        font-size: 14px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+    .main-h {
+        font-size: 24px;
+    }
+
+    .paragraph {
+        font-size: 12px;
+    }
+
+    .text-show {
+        font-size: 14px;
+    }
+}
